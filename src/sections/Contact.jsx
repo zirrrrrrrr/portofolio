@@ -5,9 +5,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      // PERUBAHAN: Hapus semua awalan "lg:" pada min-h dan items-center.
-      // pt-20 pb-20 dihapus, diganti py-10 sebagai jarak aman aja di HP layar kecil.
-      className="relative w-full min-h-[calc(100vh-136px)] flex items-center justify-center overflow-hidden bg-[#071B2A] text-[#F2EBDD] py-10 scroll-mt-16"
+      className="relative w-full lg:min-h-[calc(100vh-136px)] scroll-mt-16 bg-[#071B2A] text-[#F2EBDD] flex lg:items-center overflow-hidden py-20 lg:py-0"
     >
       {/* =========================
           ELEMEN OMBAK
