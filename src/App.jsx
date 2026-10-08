@@ -1,111 +1,72 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React, { useState, lazy, Suspense } from "react";
-import { HelmetProvider } from "react-helmet-async";
-import "./index.css";
-import Navbar from "./components/Navbar";
-import Home from "./Pages/Home";
-import About from "./Pages/About";
-import AnimatedBackground from "./components/Background";
-import { AnimatePresence } from "framer-motion";
-import Footer from "./components/Footer";
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import WelcomeScreen from './components/WelcomeScreen';
+import Hero from './sections/Hero';
+import About from './sections/About';
+import Portofolio, { ProjectDetail } from './sections/Portofolio';
+import Experience, { ExperienceDetail } from './sections/Experience';
+import Contact from './sections/Contact';
+import Footer from './sections/Footer';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-import Login from "./Pages/Login";
-import Dashboard from "./Pages/Dashboard";
-import ProtectedRoute from "./components/ProtectedRoute";
-
-const Portofolio = lazy(() => import("./Pages/Portofolio"));
-const ContactPage = lazy(() => import("./Pages/Contact"));
-const ProjectDetails = lazy(() => import("./components/ProjectDetail"));
-const WelcomeScreen = lazy(() => import("./Pages/WelcomeScreen"));
-const NotFoundPage = lazy(() => import("./Pages/404"));
-
-const LandingPage = ({ showWelcome, setShowWelcome }) => {
-  return (
-    <>
-      <AnimatePresence mode="wait">
-        {showWelcome && (
-          <Suspense fallback={null}>
-            <WelcomeScreen onLoadingComplete={() => setShowWelcome(false)} />
-          </Suspense>
-        )}
-      </AnimatePresence>
-
-      {!showWelcome && (
-        <>
-          <Navbar />
-      
-          <Home />
-          <About />
-          <Suspense fallback={<div className="h-20" />}>
-            <Portofolio />
-            <ContactPage />
-          </Suspense>
-          <Footer />
-        </>
-      )}
-    </>
-  );
-};
-
-const ProjectPageLayout = () => (
+// 1. Navbar sekarang dimasukkan eksklusif ke dalam Home
+const Home = () => (
   <>
-    <Suspense fallback={<div className="min-h-screen" />}>
-      <ProjectDetails />
-    </Suspense>
-    <Footer />
+    <Navbar />
+    <main className="pt-16">
+      <Hero />
+      <About />
+      <Experience />
+      <Portofolio />
+      <Contact />
+    </main>
   </>
 );
 
-function App() {
+const App = () => {
   const [showWelcome, setShowWelcome] = useState(true);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-out-cubic',
+      once: false,
+      mirror: true,
+      offset: 50,
+    });
+  }, []);
+
   return (
-    
-    <HelmetProvider>
-      <div className="pointer-events-none">
-  <AnimatedBackground />
-</div>
-      <BrowserRouter>
-        <Routes>
-          {/* PUBLIC */}
-          <Route
-            path="/"
-            element={
-              <LandingPage
-                showWelcome={showWelcome}
-                setShowWelcome={setShowWelcome}
-              />
-            }
+    <Router>
+      <div className="bg-[#1E293B] min-h-screen text-white font-sans selection:bg-[#38BDF8]/30 relative overflow-hidden">
+
+        {showWelcome && (
+          <WelcomeScreen
+            onLoadingComplete={() => setShowWelcome(false)}
           />
+        )}
 
-          <Route path="/project/:slug" element={<ProjectPageLayout />} />
+        <div className="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#C6A15B] rounded-full blur-[120px] opacity-10 pointer-events-none z-0"></div>
+        <div className="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-[#F2EBDD] rounded-full blur-[120px] opacity-5 pointer-events-none z-0"></div>
 
-          {/* AUTH */}
-          <Route path="/login" element={<Login />} />
+        <div className="relative z-10">
+          
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/experience/:id" element={<ExperienceDetail />} />
+            {/* Tambahan untuk Portofolio */}
+            <Route path="/project/:id" element={<ProjectDetail />} />
+          </Routes>
 
-          {/* ADMIN (PROTECTED) */}
-          <Route
-            path="/dashboard/*"
-            element={
-              <ProtectedRoute>
-                <Dashboard />
-              </ProtectedRoute>
-            }
-          />
+          {/* Footer tetap di luar Routes biar muncul di semua halaman */}
+          <Footer />
+        </div>
 
-          {/* 404 */}
-          <Route
-            path="*"
-            element={
-              <Suspense fallback={null}>
-                <NotFoundPage />
-              </Suspense>
-            }
-          />
-        </Routes>
-      </BrowserRouter>
-    </HelmetProvider>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
