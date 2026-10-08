@@ -6,7 +6,7 @@ const Contact = () => {
     <section
       id="contact"
       // PERBAIKAN: Tambahkan w-full di sini agar background merentang 100%
-      className="relative w-full bg-[#071B2A] text-[#F2EBDD] pt-24 pb-8 px-6 overflow-hidden"
+      className="relative w-full lg:min-h-[calc(100vh-136px)] flex lg:items-center justify-center overflow-hidden bg-[#071B2A] text-[#F2EBDD] pt-20 pb-20 lg:py-0 scroll-mt-16"
     >
       {/* =========================
           ELEMEN OMBAK
@@ -14,7 +14,8 @@ const Contact = () => {
       <div className="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none z-0 opacity-40">
         <svg 
           viewBox="0 0 1440 320" 
-          className="w-[1000px] max-w-none md:w-full h-auto relative left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 -translate-y-4 md:-translate-y-32" 
+          // PERUBAHAN: Hapus class "w-[1000px]" yang maksa lebar mati 1000px! Ganti pakai max-w-full
+          className="w-full max-w-full h-auto relative left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 -translate-y-4 md:-translate-y-32" 
           fill="none" 
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -45,7 +46,8 @@ const Contact = () => {
       </div>
 
       <div
-        className="relative z-10 max-w-5xl mx-auto text-center"
+        // Tambahkan "w-full" dan "px-6" di div ini seperti pada Hero
+        className="relative z-10 w-full max-w-5xl px-6 mx-auto text-center"
         data-aos="fade-up"
       >
         {/* Section Label */}

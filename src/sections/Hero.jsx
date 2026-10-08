@@ -46,9 +46,11 @@ const Hero = () => {
         className="relative w-full lg:min-h-[calc(100vh-64px)] flex lg:items-center justify-center overflow-hidden bg-[#071B2A] pt-20 pb-20 lg:py-0"
       >
         {/* Background Ombak Elegan */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-0 opacity-60">
+        {/* PERUBAHAN: Tambah max-w-full dan overflow-hidden di induk SVG */}
+        <div className="absolute bottom-0 left-0 w-full max-w-full overflow-hidden leading-none z-0 opacity-60">
           <svg
-            className="relative block w-full h-[300px] lg:h-[450px]"
+            // PERUBAHAN: Tambah max-w-full di tag svg-nya sendiri
+            className="relative block w-full max-w-full h-[300px] lg:h-[450px]"
             viewBox="0 0 1440 320"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

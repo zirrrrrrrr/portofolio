@@ -40,7 +40,7 @@ const App = () => {
 
   return (
     <Router>
-      <div className="bg-[#1E293B] min-h-screen text-white font-sans selection:bg-[#38BDF8]/30 relative overflow-hidden">
+      <div className="w-full max-w-[100vw] bg-[#1E293B] min-h-screen text-white font-sans selection:bg-[#38BDF8]/30 relative overflow-x-hidden">
 
         {showWelcome && (
           <WelcomeScreen
