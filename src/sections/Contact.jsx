@@ -5,8 +5,9 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      // PERUBAHAN: Menggunakan 100dvh dan underscores (_-_) agar CSS-nya valid 100%
-      className="relative w-full min-h-[calc(100dvh_-_136px)] flex items-center justify-center overflow-hidden bg-[#071B2A] text-[#F2EBDD] py-10 scroll-mt-16"
+      // PERUBAHAN: Hapus semua awalan "lg:" pada min-h dan items-center.
+      // pt-20 pb-20 dihapus, diganti py-10 sebagai jarak aman aja di HP layar kecil.
+      className="relative w-full min-h-[calc(100vh-136px)] flex items-center justify-center overflow-hidden bg-[#071B2A] text-[#F2EBDD] py-10 scroll-mt-16"
     >
       {/* =========================
           ELEMEN OMBAK
