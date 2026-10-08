@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative w-full lg:min-h-[calc(100vh-136px)] scroll-mt-16 bg-[#071B2A] text-[#F2EBDD] flex lg:items-center overflow-hidden py-20 lg:py-0"
+      className="relative w-full lg:min-h-[calc(100vh-136px)] scroll-mt-16 bg-[#071B2A] text-[#F2EBDD] flex lg:items-center overflow-hidden py-20 lg:py-0 px-6"
     >
       {/* =========================
           ELEMEN OMBAK
@@ -44,8 +44,7 @@ const Contact = () => {
       </div>
 
       <div
-        // Tambahkan "w-full" dan "px-6" di div ini seperti pada Hero
-        className="relative z-10 w-full max-w-5xl px-6 mx-auto text-center"
+        className="relative z-10 max-w-5xl mx-auto text-center"
         data-aos="fade-up"
       >
         {/* Section Label */}
