@@ -119,7 +119,7 @@ const Portofolio = () => {
   return (
     <section
       id="portofolio"
-      className="relative w-full lg:min-h-[calc(100vh-64px)] scroll-mt-16 bg-[#F2EBDD] text-[#071B2A] flex lg:items-center overflow-hidden py-20 lg:py-0"
+      className="relative w-full lg:min-h-[calc(100vh-64px)] scroll-mt-16 bg-[#F2EBDD] text-[#071B2A] flex lg:items-center overflow-hidden py-10 lg:py-0"
     >
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 py-16 lg:py-20">
 
