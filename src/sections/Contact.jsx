@@ -6,7 +6,7 @@ const Contact = () => {
     <section
       id="contact"
       // PERBAIKAN: Tambahkan w-full di sini agar background merentang 100%
-      className="relative w-full lg:min-h-[calc(100vh-136px)] flex lg:items-center justify-center overflow-hidden bg-[#071B2A] text-[#F2EBDD] pt-20 pb-20 lg:py-0 scroll-mt-16"
+      className="relative w-full lg:min-h-[calc(100vh-136px)] flex lg:items-center justify-center overflow-hidden bg-[#071B2A] text-[#F2EBDD] py-10 scroll-mt-16"
     >
       {/* =========================
           ELEMEN OMBAK
