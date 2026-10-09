@@ -204,7 +204,7 @@ const Portofolio = () => {
                   <div
                     key={project.id}
                     onClick={() => navigate(`/project/${project.id}`)}
-                    className="w-[80vw] sm:w-[350px] lg:w-[352px] flex-none snap-start group cursor-pointer bg-[#071B2A] border border-[#C6A15B]/95 rounded-xl p-3 md:p-4 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-[#C6A15B]/100 hover:shadow-[0_12px_30px_rgba(7,27,42,0.08)] flex flex-col"
+                    className="w-[76vw] sm:w-[350px] lg:w-[352px] flex-none snap-start group cursor-pointer bg-[#071B2A] border border-[#C6A15B]/95 rounded-xl p-3 md:p-4 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-[#C6A15B]/100 hover:shadow-[0_12px_30px_rgba(7,27,42,0.08)] flex flex-col"
                   >
                     <div className="relative w-full aspect-video overflow-hidden bg-[#071B2A] rounded shrink-0">
                       <img
@@ -280,7 +280,7 @@ const Portofolio = () => {
                   <div
                     key={cert.id}
                     onClick={() => setSelectedCert(cert)}
-                    className="w-[80vw] sm:w-[350px] lg:w-[352px] flex-none snap-start group cursor-pointer bg-[#071B2A] border border-[#C6A15B]/95 rounded-xl p-3 md:p-4 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-[#C6A15B]/100 hover:shadow-[0_12px_30px_rgba(7,27,42,0.08)] flex flex-col"
+                    className="w-[76vw] sm:w-[350px] lg:w-[352px] flex-none snap-start group cursor-pointer bg-[#071B2A] border border-[#C6A15B]/95 rounded-xl p-3 md:p-4 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-[#C6A15B]/100 hover:shadow-[0_12px_30px_rgba(7,27,42,0.08)] flex flex-col"
                   >
                     <div className="relative w-full aspect-video overflow-hidden bg-[#071B2A] rounded shrink-0">
                       <img
@@ -324,7 +324,7 @@ const Portofolio = () => {
               
               {/* --- KIRI: HARD SKILL --- */}
               {/* PERUBAHAN: Dikasih width fix w-[90vw] di HP dan separuh layar di Laptop */}
-              <div className="w-[80vw] lg:w-[calc(50%-12px)] flex-none snap-start bg-[#F2EBDD] border border-[#071B2A]/15 rounded-2xl shadow-sm overflow-hidden flex flex-col">
+              <div className="w-[76vw] lg:w-[calc(50%-12px)] flex-none snap-start bg-[#F2EBDD] border border-[#071B2A]/15 rounded-2xl shadow-sm overflow-hidden flex flex-col">
                 {/* Header Navy */}
                 <div className="bg-[#071B2A] p-4 md:px-8 border-b border-[#C6A15B]/30 flex items-center gap-3">
                   <span className="w-6 h-px bg-[#C6A15B]"></span>
@@ -335,7 +335,7 @@ const Portofolio = () => {
                 
                 {/* Body Light */}
                 <div className="p-4 md:p-5">
-                  <div className="grid grid-cols-4 sm:grid-cols-4 gap-y-5 gap-x-4">
+                  <div className="grid grid-cols-4 items-center sm:grid-cols-4 gap-y-5 gap-x-4">
                     {[
                       { 
                         name: "Excel", 
@@ -402,7 +402,7 @@ const Portofolio = () => {
 
               {/* --- KANAN: SOFT SKILL --- */}
               {/* PERUBAHAN: Dikasih width fix w-[90vw] di HP dan separuh layar di Laptop */}
-              <div className="w-[80vw] lg:w-[calc(50%-12px)] flex-none snap-start bg-[#F2EBDD] border border-[#071B2A]/15 rounded-2xl shadow-sm overflow-hidden flex flex-col">
+              <div className="w-[76vw] lg:w-[calc(50%-12px)] flex-none snap-start bg-[#F2EBDD] border border-[#071B2A]/15 rounded-2xl shadow-sm overflow-hidden flex flex-col">
                 {/* Header Navy */}
                 <div className="bg-[#071B2A] p-4 md:px-8 border-b border-[#C6A15B]/30 flex items-center gap-3">
                   <span className="w-6 h-px bg-[#C6A15B]"></span>
