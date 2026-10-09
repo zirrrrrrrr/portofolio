@@ -119,7 +119,7 @@ const Portofolio = () => {
   return (
     <section
       id="portofolio"
-      className="relative w-full lg:min-h-[calc(100vh-64px)] scroll-mt-16 bg-[#F2EBDD] text-[#071B2A] flex lg:items-center overflow-hidden py-8 lg:py-0"
+      className="relative w-full lg:min-h-[calc(100vh-64px)] scroll-mt-16 bg-[#F2EBDD] text-[#071B2A] flex lg:items-center overflow-hidden py-5 lg:py-0"
     >
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 py-16 lg:py-20">
 
@@ -286,7 +286,7 @@ const Portofolio = () => {
                       <img
                         src={Array.isArray(cert.image) ? cert.image[0] : cert.image}
                         alt={cert.title}
-                        className="w-full h-full object-center transition-transform duration-500 group-hover:scale-[1.04]"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                       />
                       <div className="absolute inset-0 bg-[#071B2A]/0 group-hover:bg-[#071B2A]/10 transition-colors duration-300" />
                     </div>
