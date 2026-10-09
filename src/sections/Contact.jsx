@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative w-full min-h-[calc(100dvh_-_136px)] md:min-h-0 lg:min-h-[calc(100vh_-_136px)] flex items-center justify-center overflow-hidden bg-[#071B2A] text-[#F2EBDD] py-10 md:py-20 lg:py-0 scroll-mt-16"
+      className="relative w-full min-h-[calc(100dvh_-_136px)] md:min-h-0 lg:min-h-[calc(100vh_-_136px)] flex items-center justify-center overflow-hidden bg-[#071B2A] text-[#F2EBDD] py-20 md:py-20 lg:py-0 scroll-mt-16"
     >
       {/* =========================
           ELEMEN OMBAK
@@ -44,7 +44,7 @@ const Contact = () => {
       </div>
 
       <div
-        className="relative z-10 max-w-5xl mx-auto text-center"
+        className="relative px-6 z-10 max-w-5xl mx-auto text-center"
         data-aos="fade-up"
       >
         {/* Section Label */}
