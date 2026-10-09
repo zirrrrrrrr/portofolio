@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative w-full lg:min-h-[calc(100vh-136px)] scroll-mt-16 bg-[#071B2A] text-[#F2EBDD] flex lg:items-center overflow-hidden py-20 lg:py-0 px-6"
+      className="relative w-full min-h-[calc(100dvh_-_136px)] md:min-h-0 lg:min-h-[calc(100vh_-_136px)] flex items-center justify-center overflow-hidden bg-[#071B2A] text-[#F2EBDD] py-10 md:py-20 lg:py-0 scroll-mt-16"
     >
       {/* =========================
           ELEMEN OMBAK
