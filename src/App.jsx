@@ -1,4 +1,3 @@
-import { Analytics } from "@vercel/analytics/next";
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -64,8 +63,6 @@ const App = () => {
           {/* Footer tetap di luar Routes biar muncul di semua halaman */}
           <Footer />
         </div>
-
-        <Analytics />
 
       </div>
     </Router>
