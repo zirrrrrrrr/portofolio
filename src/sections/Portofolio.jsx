@@ -286,7 +286,7 @@ const Portofolio = () => {
                       <img
                         src={Array.isArray(cert.image) ? cert.image[0] : cert.image}
                         alt={cert.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                        className="w-full h-full object-center transition-transform duration-500 group-hover:scale-[1.04]"
                       />
                       <div className="absolute inset-0 bg-[#071B2A]/0 group-hover:bg-[#071B2A]/10 transition-colors duration-300" />
                     </div>
