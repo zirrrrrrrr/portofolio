@@ -310,7 +310,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="relative w-full lg:min-h-[calc(100vh-64px)] scroll-mt-16 bg-[#071B2A] text-[#F2EBDD] flex lg:items-center overflow-hidden py-10 lg:py-0"
+      className="relative w-full lg:min-h-[calc(100vh-64px)] scroll-mt-16 bg-[#071B2A] text-[#F2EBDD] flex lg:items-center overflow-hidden py-8 lg:py-0"
     >
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 py-16 lg:py-20">
         <div className="mb-14" data-aos="fade-down">
@@ -464,7 +464,7 @@ const ExperienceDetail = () => {
             ))}
           </div>
         ) : (
-          <p className="text-[#B8C0C8] leading-relaxed text-base md:text-sm font-sans font-light">
+          <p className="text-sm md:text-sm leading-relaxed text-[#B8C0C8] font-sans font-light">
             {data}
           </p>
         )}

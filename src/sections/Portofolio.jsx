@@ -119,7 +119,7 @@ const Portofolio = () => {
   return (
     <section
       id="portofolio"
-      className="relative w-full lg:min-h-[calc(100vh-64px)] scroll-mt-16 bg-[#F2EBDD] text-[#071B2A] flex lg:items-center overflow-hidden py-10 lg:py-0"
+      className="relative w-full lg:min-h-[calc(100vh-64px)] scroll-mt-16 bg-[#F2EBDD] text-[#071B2A] flex lg:items-center overflow-hidden py-8 lg:py-0"
     >
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 py-16 lg:py-20">
 
@@ -334,8 +334,8 @@ const Portofolio = () => {
                 </div>
                 
                 {/* Body Light */}
-                <div className="p-4 md:p-5">
-                  <div className="grid grid-cols-4 items-center sm:grid-cols-4 gap-y-5 gap-x-4">
+                <div className="flex-1 flex flex-col justify-center p-4 md:p-5">
+                  <div className="grid grid-cols-4 gap-y-5 gap-x-1 sm:gap-x-4 md:gap-y-6">
                     {[
                       { 
                         name: "Excel", 
@@ -386,12 +386,12 @@ const Portofolio = () => {
                         icon: <img src="/logo/gform logo.png" alt="Google Forms" className="w-8 h-8 object-contain" /> 
                       },
                     ].map((tool, idx) => (
-                      <div key={idx} className="flex flex-col items-center gap-3 group cursor-default">
+                      <div key={idx} className="flex flex-col items-center gap-3 group cursor-default justify-center group">
                         {/* Kotak App Store Putih Bersih dengan Border Halus */}
                         <div className="w-[3.2rem] h-[3.2rem] bg-white rounded-[1rem] border border-[#071B2A]/10 flex items-center justify-center shadow-sm group-hover:border-[#C6A15B] group-hover:shadow-md transition-all duration-300">
                           {tool.icon}
                         </div>
-                        <span className="text-[#53677A] text-[11px] font-sans font-medium tracking-wide text-center group-hover:text-[#071B2A] transition-colors">
+                        <span className="text-[#53677A] text-[10px] font-sans font-medium tracking-wide text-center group-hover:text-[#071B2A] transition-colors">
                           {tool.name}
                         </span>
                       </div>
