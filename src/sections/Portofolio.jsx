@@ -622,16 +622,47 @@ const ProjectDetail = () => {
                   )}
                 </div>
               ) : (
-                <div className="w-full aspect-[16/10] md:aspect-[16/9] bg-white rounded-lg overflow-hidden relative flex flex-col items-center justify-center">
-                  <object data={selectedProject.reportPdf} type="application/pdf" className="w-full h-full">
-                    <div className="text-center p-8">
-                      <p className="text-[#071B2A] mb-4">Browser tidak mendukung pratinjau PDF.</p>
-                      <a href={selectedProject.reportPdf} target="_blank" rel="noreferrer" className="text-blue-600 underline">Download Laporan</a>
+                <div className="w-full aspect-[16/10] md:aspect-[16/9] bg-[#04121D] rounded-lg overflow-hidden relative flex flex-col items-center justify-center border border-[#C6A15B]/20">
+                  
+                  {/* --- TAMPILAN LAPTOP (Preview PDF Asli) --- */}
+                  <div className="hidden lg:block w-full h-full bg-white">
+                    <object data={selectedProject.reportPdf} type="application/pdf" className="w-full h-full">
+                      <p>PDF preview is not supported.</p>
+                    </object>
+                  </div>
+
+                  {/* --- TAMPILAN HP (Card Cantik untuk Buka/Download) --- */}
+                  <div className="flex lg:hidden flex-col items-center justify-center p-6 text-center w-full h-full bg-[#071B2A]">
+                    
+                    {/* Ikon Dokumen */}
+                    <div className="w-16 h-16 rounded-full bg-[#C6A15B]/10 flex items-center justify-center mb-5 border border-[#C6A15B]/30 shadow-[0_0_15px_rgba(198,161,91,0.15)]">
+                      <svg className="w-8 h-8 text-[#C6A15B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
                     </div>
-                  </object>
+                    
+                    <h3 className="text-[#F2EBDD] font-serif text-2xl mb-2">Report Document</h3>
+                    <p className="text-[#8FA4B5] text-sm font-sans mb-8 px-2">
+                      Mobile browsers do not support inline PDF preview. Please open or download the file directly.
+                    </p>
+                    
+                    {/* Tombol Action */}
+                    <a 
+                      href={selectedProject.reportPdf} 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#C6A15B] text-[#071B2A] font-medium font-sans rounded-lg hover:bg-[#D8C28A] transition-colors shadow-lg active:scale-95"
+                    >
+                      Open PDF Report
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+
+                  </div>
                 </div>
               )}
-            </div>
+            </div>  
 
             {/* KOLOM KANAN: TAB BUTTONS & PROJECT INFO */}
             <div className="flex flex-col gap-6" data-aos="fade-left" data-aos-delay="100">
