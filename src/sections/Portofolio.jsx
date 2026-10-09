@@ -625,8 +625,8 @@ const ProjectDetail = () => {
                       {/* TAMPILAN HP (Card Fallback) */}
                       <div className="flex lg:hidden flex-col items-center justify-center p-6 text-center w-full h-full bg-[#071B2A]">
                                                 
-                        <h3 className="text-[#F2EBDD] font-serif text-2xl mb-2">Dashboard Document</h3>
-                        <p className="text-[#8FA4B5] text-sm font-sans mb-8 px-2">
+                        <h3 className="text-[#F2EBDD] font-serif text-xl mb-2">Dashboard Document</h3>
+                        <p className="text-[#8FA4B5] text-sm font-sans mb-2 px-2">
                           Mobile browsers do not support inline PDF preview. Please open or download the file directly.
                         </p>
                         
@@ -634,12 +634,10 @@ const ProjectDetail = () => {
                           href={selectedProject.embedUrl} 
                           target="_blank" 
                           rel="noreferrer" 
-                          className="inline-flex items-center gap-2 px-6 py-3 bg-[#C6A15B] text-[#071B2A] font-medium font-sans rounded-lg hover:bg-[#D8C28A] transition-colors shadow-lg active:scale-95"
+                          className="inline-flex items-center w-fit gap-2 px-4 py-2 bg-[#C6A15B] text-[#071B2A] font-sans rounded-lg hover:bg-[#D8C28A] transition-colors shadow-lg active:scale-95"
                         >
                           Open PDF Dashboard
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                          </svg>
+                          <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
                         </a>
                       </div>
                     </div>
@@ -677,8 +675,8 @@ const ProjectDetail = () => {
                   {/* TAMPILAN HP */}
                   <div className="flex lg:hidden flex-col items-center justify-center p-6 text-center w-full h-full bg-[#071B2A]">
                                         
-                    <h3 className="text-[#F2EBDD] font-serif text-2xl mb-2">Report Document</h3>
-                    <p className="text-[#8FA4B5] text-sm font-sans mb-8 px-2">
+                    <h3 className="text-[#F2EBDD] font-serif text-xl mb-2">Report Document</h3>
+                    <p className="text-[#8FA4B5] text-sm font-sans mb-2 px-2">
                       Mobile browsers do not support inline PDF preview. Please open or download the file directly.
                     </p>
                     
@@ -686,12 +684,10 @@ const ProjectDetail = () => {
                       href={selectedProject.reportPdf} 
                       target="_blank" 
                       rel="noreferrer" 
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#C6A15B] text-[#071B2A] font-medium font-sans rounded-lg hover:bg-[#D8C28A] transition-colors shadow-lg active:scale-95"
+                      className="inline-flex items-center w-fit gap-2 px-4 py-2 bg-[#C6A15B] text-[#071B2A] font-sans rounded-lg hover:bg-[#D8C28A] transition-colors shadow-lg active:scale-95"
                     >
                       Open PDF Report
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
+                      <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
                     </a>
                   </div>
                 </div>
