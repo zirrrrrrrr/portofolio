@@ -609,44 +609,79 @@ const ProjectDetail = () => {
             {/* KOLOM KIRI: VISUAL UTAMA */}
             <div className="w-full h-fit border border-[#F2EBDD]/15 p-2 md:p-3 rounded-xl bg-[#04121D]/40 shadow-2xl overflow-hidden" data-aos="zoom-in">
               {viewMode === "dashboard" ? (
-                <div className="w-full aspect-[16/10] md:aspect-[16/9] bg-[#04121D] rounded-lg overflow-hidden relative flex items-center justify-center group">
-                  {selectedProject.embedUrl ? (
-                    <iframe 
-                      src={selectedProject.embedUrl} 
-                      className="w-full h-full border-0" 
-                      allowFullScreen 
-                      title={selectedProject.title}
-                    ></iframe>
+                selectedProject.embedUrl ? (
+                  // LOGIKA CERDAS: Cek apakah URL-nya Looker Studio atau bukan.
+                  // Kalau bukan lookerstudio/datastudio, berarti itu PDF/Drive, maka munculin Card di HP!
+                  (!selectedProject.embedUrl.includes("lookerstudio") && !selectedProject.embedUrl.includes("datastudio")) ? (
+                    
+                    // --- JIKA DASHBOARD BERISI PDF ---
+                    <div className="w-full aspect-[16/10] md:aspect-[16/9] bg-[#04121D] rounded-lg overflow-hidden relative flex flex-col items-center justify-center border border-[#C6A15B]/20">
+                      
+                      {/* TAMPILAN LAPTOP (Iframe PDF) */}
+                      <div className="hidden lg:block w-full h-full bg-white">
+                        <iframe src={selectedProject.embedUrl} className="w-full h-full border-0" title={selectedProject.title}></iframe>
+                      </div>
+
+                      {/* TAMPILAN HP (Card Fallback) */}
+                      <div className="flex lg:hidden flex-col items-center justify-center p-6 text-center w-full h-full bg-[#071B2A]">
+                                                
+                        <h3 className="text-[#F2EBDD] font-serif text-2xl mb-2">Dashboard Document</h3>
+                        <p className="text-[#8FA4B5] text-sm font-sans mb-8 px-2">
+                          Mobile browsers do not support inline PDF preview. Please open or download the file directly.
+                        </p>
+                        
+                        <a 
+                          href={selectedProject.embedUrl} 
+                          target="_blank" 
+                          rel="noreferrer" 
+                          className="inline-flex items-center gap-2 px-6 py-3 bg-[#C6A15B] text-[#071B2A] font-medium font-sans rounded-lg hover:bg-[#D8C28A] transition-colors shadow-lg active:scale-95"
+                        >
+                          Open PDF Dashboard
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+
                   ) : (
+                    // --- JIKA DASHBOARD ADALAH LOOKER STUDIO (Bisa di-render di HP) ---
+                    <div className="w-full aspect-[16/10] md:aspect-[16/9] bg-[#04121D] rounded-lg overflow-hidden relative flex items-center justify-center group">
+                      <iframe 
+                        src={selectedProject.embedUrl} 
+                        className="w-full h-full border-0" 
+                        allowFullScreen 
+                        title={selectedProject.title}
+                      ></iframe>
+                    </div>
+                  )
+                ) : (
+                  // --- JIKA TIDAK ADA LINK SAMA SEKALI (Hanya Gambar Preview) ---
+                  <div className="w-full aspect-[16/10] md:aspect-[16/9] bg-[#04121D] rounded-lg overflow-hidden relative flex items-center justify-center group">
                     <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-full object-cover opacity-90" />
-                  )}
-                </div>
+                  </div>
+                )
               ) : (
+                // ==========================================
+                // REPORT MODE (PDF Keduanya, sama kayak kemarin)
+                // ==========================================
                 <div className="w-full aspect-[16/10] md:aspect-[16/9] bg-[#04121D] rounded-lg overflow-hidden relative flex flex-col items-center justify-center border border-[#C6A15B]/20">
                   
-                  {/* --- TAMPILAN LAPTOP (Preview PDF Asli) --- */}
+                  {/* TAMPILAN LAPTOP */}
                   <div className="hidden lg:block w-full h-full bg-white">
                     <object data={selectedProject.reportPdf} type="application/pdf" className="w-full h-full">
                       <p>PDF preview is not supported.</p>
                     </object>
                   </div>
 
-                  {/* --- TAMPILAN HP (Card Cantik untuk Buka/Download) --- */}
+                  {/* TAMPILAN HP */}
                   <div className="flex lg:hidden flex-col items-center justify-center p-6 text-center w-full h-full bg-[#071B2A]">
-                    
-                    {/* Ikon Dokumen */}
-                    <div className="w-16 h-16 rounded-full bg-[#C6A15B]/10 flex items-center justify-center mb-5 border border-[#C6A15B]/30 shadow-[0_0_15px_rgba(198,161,91,0.15)]">
-                      <svg className="w-8 h-8 text-[#C6A15B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                      </svg>
-                    </div>
-                    
+                                        
                     <h3 className="text-[#F2EBDD] font-serif text-2xl mb-2">Report Document</h3>
                     <p className="text-[#8FA4B5] text-sm font-sans mb-8 px-2">
                       Mobile browsers do not support inline PDF preview. Please open or download the file directly.
                     </p>
                     
-                    {/* Tombol Action */}
                     <a 
                       href={selectedProject.reportPdf} 
                       target="_blank" 
@@ -658,11 +693,10 @@ const ProjectDetail = () => {
                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>
-
                   </div>
                 </div>
               )}
-            </div>  
+            </div> 
 
             {/* KOLOM KANAN: TAB BUTTONS & PROJECT INFO */}
             <div className="flex flex-col gap-6" data-aos="fade-left" data-aos-delay="100">
