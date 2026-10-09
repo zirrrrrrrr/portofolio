@@ -626,7 +626,7 @@ const ProjectDetail = () => {
                       <div className="flex lg:hidden flex-col items-center justify-center p-6 text-center w-full h-full bg-[#071B2A]">
                                                 
                         <h3 className="text-[#F2EBDD] font-serif text-xl mb-4">Dashboard Document</h3>
-                        <p className="text-[#8FA4B5] text-sm font-sans mb-2 px-2">
+                        <p className="text-[#8FA4B5] text-xs font-sans mb-4 px-2">
                           Mobile browsers do not support inline PDF preview. Please open or download the file.
                         </p>
                         
@@ -634,7 +634,7 @@ const ProjectDetail = () => {
                           href={selectedProject.embedUrl} 
                           target="_blank" 
                           rel="noreferrer" 
-                          className="inline-flex items-center w-fit px-4 py-2 bg-[#C6A15B] text-[#071B2A] text-sm font-sans rounded-lg hover:bg-[#D8C28A] transition-colors shadow-lg active:scale-95"
+                          className="inline-flex items-center w-fit gap-2 px-3 py-1 bg-[#C6A15B] text-[#071B2A] text-sm font-sans rounded-lg hover:bg-[#D8C28A] transition-colors shadow-lg active:scale-95"
                         >
                           Open PDF Dashboard
                           <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
@@ -676,7 +676,7 @@ const ProjectDetail = () => {
                   <div className="flex lg:hidden flex-col items-center justify-center p-6 text-center w-full h-full bg-[#071B2A]">
                                         
                     <h3 className="text-[#F2EBDD] font-serif text-xl mb-4">Report Document</h3>
-                    <p className="text-[#8FA4B5] text-sm font-sans mb-2 px-2">
+                    <p className="text-[#8FA4B5] text-xs font-sans mb-4 px-2">
                       Mobile browsers do not support inline PDF preview. Please open or download the file.
                     </p>
                     
@@ -684,7 +684,7 @@ const ProjectDetail = () => {
                       href={selectedProject.reportPdf} 
                       target="_blank" 
                       rel="noreferrer" 
-                      className="inline-flex items-center w-fit px-4 py-2 bg-[#C6A15B] text-[#071B2A] text-sm font-sans rounded-lg hover:bg-[#D8C28A] transition-colors shadow-lg active:scale-95"
+                      className="inline-flex items-center w-fit gap-2 px-3 py-1 bg-[#C6A15B] text-[#071B2A] text-sm font-sans rounded-lg hover:bg-[#D8C28A] transition-colors shadow-lg active:scale-95"
                     >
                       Open PDF Report
                       <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
